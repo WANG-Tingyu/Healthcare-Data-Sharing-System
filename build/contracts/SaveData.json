@@ -1,0 +1,2371 @@
+{
+  "contractName": "SaveData",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "data",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "hashOfOriginalDataString",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "secondTimeEncryptedString",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "medReportId",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "senders",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "totalMedicalReports",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "totalMedicalReports",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "secondTimeEncryptedString",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "hashOfOriginalDataString",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "medReportId",
+          "type": "string"
+        }
+      ],
+      "name": "saveData",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"data\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"hashOfOriginalDataString\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"secondTimeEncryptedString\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"medReportId\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"secondTimeEncryptedString\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"hashOfOriginalDataString\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"medReportId\",\"type\":\"string\"}],\"name\":\"saveData\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"senders\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"totalMedicalReports\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalMedicalReports\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/SaveData.sol\":\"SaveData\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/SaveData.sol\":{\"keccak256\":\"0x16e1629c3daa1b0d05b62c1564bbc279670be7cfe018f27e638be47ecfdc02b1\",\"urls\":[\"bzz-raw://f0111cdf20771f359f7d90c79ff1083113d68b919f446b625a8215a386453d30\",\"dweb:/ipfs/QmWDG6hJ6nJR5vsAQ3D7tnbECbN37Lz2dHb6QPe2LC2naX\"]}},\"version\":1}",
+  "bytecode": "0x60806040526000805534801561001457600080fd5b5061073f806100246000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80632320b16b14610051578063982fb9d814610207578063e7ee5d521461023f578063f0ba844014610247575b600080fd5b6102056004803603606081101561006757600080fd5b81019060208101813564010000000081111561008257600080fd5b82018360208201111561009457600080fd5b803590602001918460018302840111640100000000831117156100b657600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929594936020810193503591505064010000000081111561010957600080fd5b82018360208201111561011b57600080fd5b8035906020019184600183028401116401000000008311171561013d57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929594936020810193503591505064010000000081111561019057600080fd5b8201836020820111156101a257600080fd5b803590602001918460018302840111640100000000831117156101c457600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506103c1945050505050565b005b61022d6004803603602081101561021d57600080fd5b50356001600160a01b031661047b565b60408051918252519081900360200190f35b61022d61048d565b6102646004803603602081101561025d57600080fd5b5035610493565b604051808060200180602001856001600160a01b03166001600160a01b0316815260200180602001848103845288818151815260200191508051906020019080838360005b838110156102c15781810151838201526020016102a9565b50505050905090810190601f1680156102ee5780820380516001836020036101000a031916815260200191505b50848103835287518152875160209182019189019080838360005b83811015610321578181015183820152602001610309565b50505050905090810190601f16801561034e5780820380516001836020036101000a031916815260200191505b50848103825285518152855160209182019187019080838360005b83811015610381578181015183820152602001610369565b50505050905090810190601f1680156103ae5780820380516001836020036101000a031916815260200191505b5097505050505050505060405180910390f35b60008054815260016020818152604090922085516103e79391909201919086019061066f565b5060008054815260016020908152604090912083516104089285019061066f565b5060008054815260016020908152604080832060020180546001600160a01b031916331790558254835290912082516104499260039092019184019061066f565b505060008054600180820183553383526002602090815260408085208054808501825586529092019052909120555050565b60026020526000908152604090205481565b60005481565b60016020818152600092835260409283902080548451600294821615610100026000190190911693909304601f81018390048302840183019094528383529283918301828280156105255780601f106104fa57610100808354040283529160200191610525565b820191906000526020600020905b81548152906001019060200180831161050857829003601f168201915b505050505090806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105c35780601f10610598576101008083540402835291602001916105c3565b820191906000526020600020905b8154815290600101906020018083116105a657829003601f168201915b505050506002838101546003850180546040805160206101006001851615026000190190931695909504601f810183900483028601830190915280855295966001600160a01b03909316959294509091908301828280156106655780601f1061063a57610100808354040283529160200191610665565b820191906000526020600020905b81548152906001019060200180831161064857829003601f168201915b5050505050905084565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106106b057805160ff19168380011785556106dd565b828001600101855582156106dd579182015b828111156106dd5782518255916020019190600101906106c2565b506106e99291506106ed565b5090565b61070791905b808211156106e957600081556001016106f3565b9056fea265627a7a723158203721df31ad3b09cd81a38f334423a408634323e8a0e04f7b0c76fbe338d90cd864736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80632320b16b14610051578063982fb9d814610207578063e7ee5d521461023f578063f0ba844014610247575b600080fd5b6102056004803603606081101561006757600080fd5b81019060208101813564010000000081111561008257600080fd5b82018360208201111561009457600080fd5b803590602001918460018302840111640100000000831117156100b657600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929594936020810193503591505064010000000081111561010957600080fd5b82018360208201111561011b57600080fd5b8035906020019184600183028401116401000000008311171561013d57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929594936020810193503591505064010000000081111561019057600080fd5b8201836020820111156101a257600080fd5b803590602001918460018302840111640100000000831117156101c457600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506103c1945050505050565b005b61022d6004803603602081101561021d57600080fd5b50356001600160a01b031661047b565b60408051918252519081900360200190f35b61022d61048d565b6102646004803603602081101561025d57600080fd5b5035610493565b604051808060200180602001856001600160a01b03166001600160a01b0316815260200180602001848103845288818151815260200191508051906020019080838360005b838110156102c15781810151838201526020016102a9565b50505050905090810190601f1680156102ee5780820380516001836020036101000a031916815260200191505b50848103835287518152875160209182019189019080838360005b83811015610321578181015183820152602001610309565b50505050905090810190601f16801561034e5780820380516001836020036101000a031916815260200191505b50848103825285518152855160209182019187019080838360005b83811015610381578181015183820152602001610369565b50505050905090810190601f1680156103ae5780820380516001836020036101000a031916815260200191505b5097505050505050505060405180910390f35b60008054815260016020818152604090922085516103e79391909201919086019061066f565b5060008054815260016020908152604090912083516104089285019061066f565b5060008054815260016020908152604080832060020180546001600160a01b031916331790558254835290912082516104499260039092019184019061066f565b505060008054600180820183553383526002602090815260408085208054808501825586529092019052909120555050565b60026020526000908152604090205481565b60005481565b60016020818152600092835260409283902080548451600294821615610100026000190190911693909304601f81018390048302840183019094528383529283918301828280156105255780601f106104fa57610100808354040283529160200191610525565b820191906000526020600020905b81548152906001019060200180831161050857829003601f168201915b505050505090806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105c35780601f10610598576101008083540402835291602001916105c3565b820191906000526020600020905b8154815290600101906020018083116105a657829003601f168201915b505050506002838101546003850180546040805160206101006001851615026000190190931695909504601f810183900483028601830190915280855295966001600160a01b03909316959294509091908301828280156106655780601f1061063a57610100808354040283529160200191610665565b820191906000526020600020905b81548152906001019060200180831161064857829003601f168201915b5050505050905084565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106106b057805160ff19168380011785556106dd565b828001600101855582156106dd579182015b828111156106dd5782518255916020019190600101906106c2565b506106e99291506106ed565b5090565b61070791905b808211156106e957600081556001016106f3565b9056fea265627a7a723158203721df31ad3b09cd81a38f334423a408634323e8a0e04f7b0c76fbe338d90cd864736f6c63430005100032",
+  "sourceMap": "25:899:2:-;;;81:1;47:35;;25:899;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:899:2;;;;;;;",
+  "deployedSourceMap": "25:899:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:899:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;394:528;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;394:528:2;;;;;;;;21:11:-1;5:28;;2:2;;;46:1;43;36:12;2:2;394:528:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;394:528:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;394:528:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;394:528:2;;;;;;;;-1:-1:-1;394:528:2;;-1:-1:-1;;21:11;5:28;;2:2;;;46:1;43;36:12;2:2;394:528:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;394:528:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;394:528:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;394:528:2;;;;;;;;-1:-1:-1;394:528:2;;-1:-1:-1;;21:11;5:28;;2:2;;;46:1;43;36:12;2:2;394:528:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;394:528:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;394:528:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;394:528:2;;-1:-1:-1;394:528:2;;-1:-1:-1;;;;;394:528:2:i;:::-;;123:41;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;123:41:2;-1:-1:-1;;;;;123:41:2;;:::i;:::-;;;;;;;;;;;;;;;;47:35;;;:::i;86:33::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;86:33:2;;:::i;:::-;;;;;;;;;;;-1:-1:-1;;;;;86:33:2;-1:-1:-1;;;;;86:33:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;86:33:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;86:33:2;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;86:33:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;86:33:2;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;86:33:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;394:528;549:25;554:19;;549:25;;:4;:25;;;;;;;;:79;;;;:51;;;;;:79;;;;;:::i;:::-;-1:-1:-1;634:25:2;639:19;;634:25;;:4;:25;;;;;;;;:77;;;;;;;;:::i;:::-;-1:-1:-1;717:25:2;722:19;;717:25;;:4;:25;;;;;;;;:32;;:45;;-1:-1:-1;;;;;;717:45:2;752:10;717:45;;;773:19;;768:25;;;;;:51;;;;:37;;;;;:51;;;;:::i;:::-;-1:-1:-1;;896:19:2;:21;;;;;;;;834:10;826:19;;:7;:19;;;;;;;;851:41;;;;;;;826:67;;:24;;;:67;;;;;:91;-1:-1:-1;;394:528:2:o;123:41::-;;;;;;;;;;;;;:::o;47:35::-;;;;:::o;86:33::-;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;86:33:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;86:33:2;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;86:33:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;86:33:2;;;;;;-1:-1:-1;86:33:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;25:899::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;25:899:2;;;-1:-1:-1;25:899:2;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\n\ncontract SaveData {\n  uint public totalMedicalReports = 0;\n  mapping(uint => Data) public data;\n  mapping(address => Sender) public senders;\n\n  struct Sender {\n    uint totalMedicalReports;\n    mapping(uint => uint) data;\n  }\n\n  struct Data {\n    string hashOfOriginalDataString;\n    string secondTimeEncryptedString;\n    address sender;\n    string medReportId;\n  }\n\n  function saveData(\n    string memory secondTimeEncryptedString,\n    string memory hashOfOriginalDataString,\n    string memory medReportId\n  ) public {\n    data[totalMedicalReports].secondTimeEncryptedString = secondTimeEncryptedString;\n    data[totalMedicalReports].hashOfOriginalDataString = hashOfOriginalDataString;\n    data[totalMedicalReports].sender = msg.sender;\n    data[totalMedicalReports].medReportId = medReportId;\n\n    senders[msg.sender].data[senders[msg.sender].totalMedicalReports++] = totalMedicalReports++;\n  }\n}\n",
+  "sourcePath": "/Users/boweima/Desktop/blockchain/contracts/SaveData.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/SaveData.sol",
+    "exportedSymbols": {
+      "SaveData": [
+        395
+      ]
+    },
+    "id": 396,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 312,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 395,
+        "linearizedBaseContracts": [
+          395
+        ],
+        "name": "SaveData",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 315,
+            "name": "totalMedicalReports",
+            "nodeType": "VariableDeclaration",
+            "scope": 395,
+            "src": "47:35:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 313,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "47:4:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 314,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "81:1:2",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 319,
+            "name": "data",
+            "nodeType": "VariableDeclaration",
+            "scope": 395,
+            "src": "86:33:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Data_$339_storage_$",
+              "typeString": "mapping(uint256 => struct SaveData.Data)"
+            },
+            "typeName": {
+              "id": 318,
+              "keyType": {
+                "id": 316,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "94:4:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "86:21:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Data_$339_storage_$",
+                "typeString": "mapping(uint256 => struct SaveData.Data)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 317,
+                "name": "Data",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 339,
+                "src": "102:4:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Data_$339_storage_ptr",
+                  "typeString": "struct SaveData.Data"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 323,
+            "name": "senders",
+            "nodeType": "VariableDeclaration",
+            "scope": 395,
+            "src": "123:41:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Sender_$330_storage_$",
+              "typeString": "mapping(address => struct SaveData.Sender)"
+            },
+            "typeName": {
+              "id": 322,
+              "keyType": {
+                "id": 320,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "131:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "123:26:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Sender_$330_storage_$",
+                "typeString": "mapping(address => struct SaveData.Sender)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 321,
+                "name": "Sender",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 330,
+                "src": "142:6:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Sender_$330_storage_ptr",
+                  "typeString": "struct SaveData.Sender"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "SaveData.Sender",
+            "id": 330,
+            "members": [
+              {
+                "constant": false,
+                "id": 325,
+                "name": "totalMedicalReports",
+                "nodeType": "VariableDeclaration",
+                "scope": 330,
+                "src": "189:24:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 324,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "189:4:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 329,
+                "name": "data",
+                "nodeType": "VariableDeclaration",
+                "scope": 330,
+                "src": "219:26:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                  "typeString": "mapping(uint256 => uint256)"
+                },
+                "typeName": {
+                  "id": 328,
+                  "keyType": {
+                    "id": 326,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "227:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "219:21:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                    "typeString": "mapping(uint256 => uint256)"
+                  },
+                  "valueType": {
+                    "id": 327,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "235:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Sender",
+            "nodeType": "StructDefinition",
+            "scope": 395,
+            "src": "169:81:2",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "SaveData.Data",
+            "id": 339,
+            "members": [
+              {
+                "constant": false,
+                "id": 332,
+                "name": "hashOfOriginalDataString",
+                "nodeType": "VariableDeclaration",
+                "scope": 339,
+                "src": "272:31:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 331,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "272:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 334,
+                "name": "secondTimeEncryptedString",
+                "nodeType": "VariableDeclaration",
+                "scope": 339,
+                "src": "309:32:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 333,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "309:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 336,
+                "name": "sender",
+                "nodeType": "VariableDeclaration",
+                "scope": 339,
+                "src": "347:14:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 335,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "347:7:2",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 338,
+                "name": "medReportId",
+                "nodeType": "VariableDeclaration",
+                "scope": 339,
+                "src": "367:18:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 337,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "367:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Data",
+            "nodeType": "StructDefinition",
+            "scope": 395,
+            "src": "254:136:2",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 393,
+              "nodeType": "Block",
+              "src": "543:379:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 353,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 348,
+                          "name": "data",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 319,
+                          "src": "549:4:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Data_$339_storage_$",
+                            "typeString": "mapping(uint256 => struct SaveData.Data storage ref)"
+                          }
+                        },
+                        "id": 350,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 349,
+                          "name": "totalMedicalReports",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 315,
+                          "src": "554:19:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "549:25:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$339_storage",
+                          "typeString": "struct SaveData.Data storage ref"
+                        }
+                      },
+                      "id": 351,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "secondTimeEncryptedString",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 334,
+                      "src": "549:51:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 352,
+                      "name": "secondTimeEncryptedString",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 341,
+                      "src": "603:25:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "549:79:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 354,
+                  "nodeType": "ExpressionStatement",
+                  "src": "549:79:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 360,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 355,
+                          "name": "data",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 319,
+                          "src": "634:4:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Data_$339_storage_$",
+                            "typeString": "mapping(uint256 => struct SaveData.Data storage ref)"
+                          }
+                        },
+                        "id": 357,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 356,
+                          "name": "totalMedicalReports",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 315,
+                          "src": "639:19:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "634:25:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$339_storage",
+                          "typeString": "struct SaveData.Data storage ref"
+                        }
+                      },
+                      "id": 358,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "hashOfOriginalDataString",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 332,
+                      "src": "634:50:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 359,
+                      "name": "hashOfOriginalDataString",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 343,
+                      "src": "687:24:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "634:77:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 361,
+                  "nodeType": "ExpressionStatement",
+                  "src": "634:77:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 368,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 362,
+                          "name": "data",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 319,
+                          "src": "717:4:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Data_$339_storage_$",
+                            "typeString": "mapping(uint256 => struct SaveData.Data storage ref)"
+                          }
+                        },
+                        "id": 364,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 363,
+                          "name": "totalMedicalReports",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 315,
+                          "src": "722:19:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "717:25:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$339_storage",
+                          "typeString": "struct SaveData.Data storage ref"
+                        }
+                      },
+                      "id": 365,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 336,
+                      "src": "717:32:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 366,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 410,
+                        "src": "752:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 367,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "752:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "717:45:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 369,
+                  "nodeType": "ExpressionStatement",
+                  "src": "717:45:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 375,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 370,
+                          "name": "data",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 319,
+                          "src": "768:4:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Data_$339_storage_$",
+                            "typeString": "mapping(uint256 => struct SaveData.Data storage ref)"
+                          }
+                        },
+                        "id": 372,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 371,
+                          "name": "totalMedicalReports",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 315,
+                          "src": "773:19:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "768:25:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Data_$339_storage",
+                          "typeString": "struct SaveData.Data storage ref"
+                        }
+                      },
+                      "id": 373,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "medReportId",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 338,
+                      "src": "768:37:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 374,
+                      "name": "medReportId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 345,
+                      "src": "808:11:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "768:51:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 376,
+                  "nodeType": "ExpressionStatement",
+                  "src": "768:51:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 391,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 377,
+                            "name": "senders",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 323,
+                            "src": "826:7:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Sender_$330_storage_$",
+                              "typeString": "mapping(address => struct SaveData.Sender storage ref)"
+                            }
+                          },
+                          "id": 380,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 378,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 410,
+                              "src": "834:3:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 379,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "834:10:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "826:19:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Sender_$330_storage",
+                            "typeString": "struct SaveData.Sender storage ref"
+                          }
+                        },
+                        "id": 381,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "data",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 329,
+                        "src": "826:24:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
+                          "typeString": "mapping(uint256 => uint256)"
+                        }
+                      },
+                      "id": 388,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 387,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "++",
+                        "prefix": false,
+                        "src": "851:41:2",
+                        "subExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "baseExpression": {
+                              "argumentTypes": null,
+                              "id": 382,
+                              "name": "senders",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 323,
+                              "src": "851:7:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Sender_$330_storage_$",
+                                "typeString": "mapping(address => struct SaveData.Sender storage ref)"
+                              }
+                            },
+                            "id": 385,
+                            "indexExpression": {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 383,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 410,
+                                "src": "859:3:2",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 384,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "sender",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "859:10:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "851:19:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Sender_$330_storage",
+                              "typeString": "struct SaveData.Sender storage ref"
+                            }
+                          },
+                          "id": 386,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": true,
+                          "memberName": "totalMedicalReports",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 325,
+                          "src": "851:39:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "826:67:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 390,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "++",
+                      "prefix": false,
+                      "src": "896:21:2",
+                      "subExpression": {
+                        "argumentTypes": null,
+                        "id": 389,
+                        "name": "totalMedicalReports",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 315,
+                        "src": "896:19:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "826:91:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 392,
+                  "nodeType": "ExpressionStatement",
+                  "src": "826:91:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 394,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "saveData",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 346,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 341,
+                  "name": "secondTimeEncryptedString",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 394,
+                  "src": "417:39:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 340,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "417:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 343,
+                  "name": "hashOfOriginalDataString",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 394,
+                  "src": "462:38:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 342,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "462:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 345,
+                  "name": "medReportId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 394,
+                  "src": "506:25:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 344,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "506:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "411:124:2"
+            },
+            "returnParameters": {
+              "id": 347,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "543:0:2"
+            },
+            "scope": 395,
+            "src": "394:528:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 396,
+        "src": "25:899:2"
+      }
+    ],
+    "src": "0:925:2"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/SaveData.sol",
+      "exportedSymbols": {
+        "SaveData": [
+          395
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.5",
+            ".0"
+          ]
+        },
+        "id": 312,
+        "name": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            395
+          ],
+          "name": "SaveData",
+          "scope": 396
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "totalMedicalReports",
+              "scope": 395,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
+                "id": 313,
+                "name": "ElementaryTypeName",
+                "src": "47:4:2"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "hexvalue": "30",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "subdenomination": null,
+                  "token": "number",
+                  "type": "int_const 0",
+                  "value": "0"
+                },
+                "id": 314,
+                "name": "Literal",
+                "src": "81:1:2"
+              }
+            ],
+            "id": 315,
+            "name": "VariableDeclaration",
+            "src": "47:35:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "data",
+              "scope": 395,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(uint256 => struct SaveData.Data)",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(uint256 => struct SaveData.Data)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 316,
+                    "name": "ElementaryTypeName",
+                    "src": "94:4:2"
+                  },
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "Data",
+                      "referencedDeclaration": 339,
+                      "type": "struct SaveData.Data"
+                    },
+                    "id": 317,
+                    "name": "UserDefinedTypeName",
+                    "src": "102:4:2"
+                  }
+                ],
+                "id": 318,
+                "name": "Mapping",
+                "src": "86:21:2"
+              }
+            ],
+            "id": 319,
+            "name": "VariableDeclaration",
+            "src": "86:33:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "senders",
+              "scope": 395,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(address => struct SaveData.Sender)",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(address => struct SaveData.Sender)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 320,
+                    "name": "ElementaryTypeName",
+                    "src": "131:7:2"
+                  },
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "Sender",
+                      "referencedDeclaration": 330,
+                      "type": "struct SaveData.Sender"
+                    },
+                    "id": 321,
+                    "name": "UserDefinedTypeName",
+                    "src": "142:6:2"
+                  }
+                ],
+                "id": 322,
+                "name": "Mapping",
+                "src": "123:26:2"
+              }
+            ],
+            "id": 323,
+            "name": "VariableDeclaration",
+            "src": "123:41:2"
+          },
+          {
+            "attributes": {
+              "canonicalName": "SaveData.Sender",
+              "name": "Sender",
+              "scope": 395,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "totalMedicalReports",
+                  "scope": 330,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 324,
+                    "name": "ElementaryTypeName",
+                    "src": "189:4:2"
+                  }
+                ],
+                "id": 325,
+                "name": "VariableDeclaration",
+                "src": "189:24:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "data",
+                  "scope": 330,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "mapping(uint256 => uint256)",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "type": "mapping(uint256 => uint256)"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 326,
+                        "name": "ElementaryTypeName",
+                        "src": "227:4:2"
+                      },
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 327,
+                        "name": "ElementaryTypeName",
+                        "src": "235:4:2"
+                      }
+                    ],
+                    "id": 328,
+                    "name": "Mapping",
+                    "src": "219:21:2"
+                  }
+                ],
+                "id": 329,
+                "name": "VariableDeclaration",
+                "src": "219:26:2"
+              }
+            ],
+            "id": 330,
+            "name": "StructDefinition",
+            "src": "169:81:2"
+          },
+          {
+            "attributes": {
+              "canonicalName": "SaveData.Data",
+              "name": "Data",
+              "scope": 395,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "hashOfOriginalDataString",
+                  "scope": 339,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 331,
+                    "name": "ElementaryTypeName",
+                    "src": "272:6:2"
+                  }
+                ],
+                "id": 332,
+                "name": "VariableDeclaration",
+                "src": "272:31:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "secondTimeEncryptedString",
+                  "scope": 339,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 333,
+                    "name": "ElementaryTypeName",
+                    "src": "309:6:2"
+                  }
+                ],
+                "id": 334,
+                "name": "VariableDeclaration",
+                "src": "309:32:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "sender",
+                  "scope": 339,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "stateMutability": "nonpayable",
+                      "type": "address"
+                    },
+                    "id": 335,
+                    "name": "ElementaryTypeName",
+                    "src": "347:7:2"
+                  }
+                ],
+                "id": 336,
+                "name": "VariableDeclaration",
+                "src": "347:14:2"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "medReportId",
+                  "scope": 339,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 337,
+                    "name": "ElementaryTypeName",
+                    "src": "367:6:2"
+                  }
+                ],
+                "id": 338,
+                "name": "VariableDeclaration",
+                "src": "367:18:2"
+              }
+            ],
+            "id": 339,
+            "name": "StructDefinition",
+            "src": "254:136:2"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "saveData",
+              "scope": 395,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "secondTimeEncryptedString",
+                      "scope": 394,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 340,
+                        "name": "ElementaryTypeName",
+                        "src": "417:6:2"
+                      }
+                    ],
+                    "id": 341,
+                    "name": "VariableDeclaration",
+                    "src": "417:39:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "hashOfOriginalDataString",
+                      "scope": 394,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 342,
+                        "name": "ElementaryTypeName",
+                        "src": "462:6:2"
+                      }
+                    ],
+                    "id": 343,
+                    "name": "VariableDeclaration",
+                    "src": "462:38:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "medReportId",
+                      "scope": 394,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 344,
+                        "name": "ElementaryTypeName",
+                        "src": "506:6:2"
+                      }
+                    ],
+                    "id": 345,
+                    "name": "VariableDeclaration",
+                    "src": "506:25:2"
+                  }
+                ],
+                "id": 346,
+                "name": "ParameterList",
+                "src": "411:124:2"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 347,
+                "name": "ParameterList",
+                "src": "543:0:2"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "secondTimeEncryptedString",
+                              "referencedDeclaration": 334,
+                              "type": "string storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "struct SaveData.Data storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 319,
+                                      "type": "mapping(uint256 => struct SaveData.Data storage ref)",
+                                      "value": "data"
+                                    },
+                                    "id": 348,
+                                    "name": "Identifier",
+                                    "src": "549:4:2"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 315,
+                                      "type": "uint256",
+                                      "value": "totalMedicalReports"
+                                    },
+                                    "id": 349,
+                                    "name": "Identifier",
+                                    "src": "554:19:2"
+                                  }
+                                ],
+                                "id": 350,
+                                "name": "IndexAccess",
+                                "src": "549:25:2"
+                              }
+                            ],
+                            "id": 351,
+                            "name": "MemberAccess",
+                            "src": "549:51:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 341,
+                              "type": "string memory",
+                              "value": "secondTimeEncryptedString"
+                            },
+                            "id": 352,
+                            "name": "Identifier",
+                            "src": "603:25:2"
+                          }
+                        ],
+                        "id": 353,
+                        "name": "Assignment",
+                        "src": "549:79:2"
+                      }
+                    ],
+                    "id": 354,
+                    "name": "ExpressionStatement",
+                    "src": "549:79:2"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "hashOfOriginalDataString",
+                              "referencedDeclaration": 332,
+                              "type": "string storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "struct SaveData.Data storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 319,
+                                      "type": "mapping(uint256 => struct SaveData.Data storage ref)",
+                                      "value": "data"
+                                    },
+                                    "id": 355,
+                                    "name": "Identifier",
+                                    "src": "634:4:2"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 315,
+                                      "type": "uint256",
+                                      "value": "totalMedicalReports"
+                                    },
+                                    "id": 356,
+                                    "name": "Identifier",
+                                    "src": "639:19:2"
+                                  }
+                                ],
+                                "id": 357,
+                                "name": "IndexAccess",
+                                "src": "634:25:2"
+                              }
+                            ],
+                            "id": 358,
+                            "name": "MemberAccess",
+                            "src": "634:50:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 343,
+                              "type": "string memory",
+                              "value": "hashOfOriginalDataString"
+                            },
+                            "id": 359,
+                            "name": "Identifier",
+                            "src": "687:24:2"
+                          }
+                        ],
+                        "id": 360,
+                        "name": "Assignment",
+                        "src": "634:77:2"
+                      }
+                    ],
+                    "id": 361,
+                    "name": "ExpressionStatement",
+                    "src": "634:77:2"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "sender",
+                              "referencedDeclaration": 336,
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "struct SaveData.Data storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 319,
+                                      "type": "mapping(uint256 => struct SaveData.Data storage ref)",
+                                      "value": "data"
+                                    },
+                                    "id": 362,
+                                    "name": "Identifier",
+                                    "src": "717:4:2"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 315,
+                                      "type": "uint256",
+                                      "value": "totalMedicalReports"
+                                    },
+                                    "id": 363,
+                                    "name": "Identifier",
+                                    "src": "722:19:2"
+                                  }
+                                ],
+                                "id": 364,
+                                "name": "IndexAccess",
+                                "src": "717:25:2"
+                              }
+                            ],
+                            "id": 365,
+                            "name": "MemberAccess",
+                            "src": "717:32:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 410,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 366,
+                                "name": "Identifier",
+                                "src": "752:3:2"
+                              }
+                            ],
+                            "id": 367,
+                            "name": "MemberAccess",
+                            "src": "752:10:2"
+                          }
+                        ],
+                        "id": 368,
+                        "name": "Assignment",
+                        "src": "717:45:2"
+                      }
+                    ],
+                    "id": 369,
+                    "name": "ExpressionStatement",
+                    "src": "717:45:2"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "medReportId",
+                              "referencedDeclaration": 338,
+                              "type": "string storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "struct SaveData.Data storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 319,
+                                      "type": "mapping(uint256 => struct SaveData.Data storage ref)",
+                                      "value": "data"
+                                    },
+                                    "id": 370,
+                                    "name": "Identifier",
+                                    "src": "768:4:2"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 315,
+                                      "type": "uint256",
+                                      "value": "totalMedicalReports"
+                                    },
+                                    "id": 371,
+                                    "name": "Identifier",
+                                    "src": "773:19:2"
+                                  }
+                                ],
+                                "id": 372,
+                                "name": "IndexAccess",
+                                "src": "768:25:2"
+                              }
+                            ],
+                            "id": 373,
+                            "name": "MemberAccess",
+                            "src": "768:37:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 345,
+                              "type": "string memory",
+                              "value": "medReportId"
+                            },
+                            "id": 374,
+                            "name": "Identifier",
+                            "src": "808:11:2"
+                          }
+                        ],
+                        "id": 375,
+                        "name": "Assignment",
+                        "src": "768:51:2"
+                      }
+                    ],
+                    "id": 376,
+                    "name": "ExpressionStatement",
+                    "src": "768:51:2"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "data",
+                                  "referencedDeclaration": 329,
+                                  "type": "mapping(uint256 => uint256)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "type": "struct SaveData.Sender storage ref"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 323,
+                                          "type": "mapping(address => struct SaveData.Sender storage ref)",
+                                          "value": "senders"
+                                        },
+                                        "id": 377,
+                                        "name": "Identifier",
+                                        "src": "826:7:2"
+                                      },
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "isConstant": false,
+                                          "isLValue": false,
+                                          "isPure": false,
+                                          "lValueRequested": false,
+                                          "member_name": "sender",
+                                          "referencedDeclaration": null,
+                                          "type": "address payable"
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "overloadedDeclarations": [
+                                                null
+                                              ],
+                                              "referencedDeclaration": 410,
+                                              "type": "msg",
+                                              "value": "msg"
+                                            },
+                                            "id": 378,
+                                            "name": "Identifier",
+                                            "src": "834:3:2"
+                                          }
+                                        ],
+                                        "id": 379,
+                                        "name": "MemberAccess",
+                                        "src": "834:10:2"
+                                      }
+                                    ],
+                                    "id": 380,
+                                    "name": "IndexAccess",
+                                    "src": "826:19:2"
+                                  }
+                                ],
+                                "id": 381,
+                                "name": "MemberAccess",
+                                "src": "826:24:2"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "++",
+                                  "prefix": false,
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": true,
+                                      "member_name": "totalMedicalReports",
+                                      "referencedDeclaration": 325,
+                                      "type": "uint256"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "isConstant": false,
+                                          "isLValue": true,
+                                          "isPure": false,
+                                          "lValueRequested": false,
+                                          "type": "struct SaveData.Sender storage ref"
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "overloadedDeclarations": [
+                                                null
+                                              ],
+                                              "referencedDeclaration": 323,
+                                              "type": "mapping(address => struct SaveData.Sender storage ref)",
+                                              "value": "senders"
+                                            },
+                                            "id": 382,
+                                            "name": "Identifier",
+                                            "src": "851:7:2"
+                                          },
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "isConstant": false,
+                                              "isLValue": false,
+                                              "isPure": false,
+                                              "lValueRequested": false,
+                                              "member_name": "sender",
+                                              "referencedDeclaration": null,
+                                              "type": "address payable"
+                                            },
+                                            "children": [
+                                              {
+                                                "attributes": {
+                                                  "argumentTypes": null,
+                                                  "overloadedDeclarations": [
+                                                    null
+                                                  ],
+                                                  "referencedDeclaration": 410,
+                                                  "type": "msg",
+                                                  "value": "msg"
+                                                },
+                                                "id": 383,
+                                                "name": "Identifier",
+                                                "src": "859:3:2"
+                                              }
+                                            ],
+                                            "id": 384,
+                                            "name": "MemberAccess",
+                                            "src": "859:10:2"
+                                          }
+                                        ],
+                                        "id": 385,
+                                        "name": "IndexAccess",
+                                        "src": "851:19:2"
+                                      }
+                                    ],
+                                    "id": 386,
+                                    "name": "MemberAccess",
+                                    "src": "851:39:2"
+                                  }
+                                ],
+                                "id": 387,
+                                "name": "UnaryOperation",
+                                "src": "851:41:2"
+                              }
+                            ],
+                            "id": 388,
+                            "name": "IndexAccess",
+                            "src": "826:67:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "++",
+                              "prefix": false,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 315,
+                                  "type": "uint256",
+                                  "value": "totalMedicalReports"
+                                },
+                                "id": 389,
+                                "name": "Identifier",
+                                "src": "896:19:2"
+                              }
+                            ],
+                            "id": 390,
+                            "name": "UnaryOperation",
+                            "src": "896:21:2"
+                          }
+                        ],
+                        "id": 391,
+                        "name": "Assignment",
+                        "src": "826:91:2"
+                      }
+                    ],
+                    "id": 392,
+                    "name": "ExpressionStatement",
+                    "src": "826:91:2"
+                  }
+                ],
+                "id": 393,
+                "name": "Block",
+                "src": "543:379:2"
+              }
+            ],
+            "id": 394,
+            "name": "FunctionDefinition",
+            "src": "394:528:2"
+          }
+        ],
+        "id": 395,
+        "name": "ContractDefinition",
+        "src": "25:899:2"
+      }
+    ],
+    "id": 396,
+    "name": "SourceUnit",
+    "src": "0:925:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xB5cC3197589fAE7De1e4Ab19050420dc690DE369",
+      "transactionHash": "0xa94d415218e637571efe8ee5cda82b6339401b9d95cd7d1766639729b0b1c007"
+    }
+  },
+  "schemaVersion": "3.4.13",
+  "updatedAt": "2023-03-23T07:14:45.995Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
